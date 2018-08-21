@@ -126,6 +126,17 @@ public class DeeShevFuncCompany extends Company implements FuncCompany {
 
     @Override
     public String infoEmployee(Employee employee) {
-        return employee.toString();
+        String info = "";
+        if (this.getStaff().contains(employee)){
+            for (int i = 0; i < this.getStaff().size(); i++){
+                if (this.getStaff().get(i).equals(employee)){
+                    Employee foundEmp = this.getStaff().get(i);
+                    info = foundEmp.toString();
+                }
+            }
+        }else {
+            LOG.info("There is no such employee! " + employee);
+        }
+        return info;
     }
 }
