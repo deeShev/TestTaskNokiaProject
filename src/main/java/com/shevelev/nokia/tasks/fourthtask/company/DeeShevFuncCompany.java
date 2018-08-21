@@ -128,14 +128,4 @@ public class DeeShevFuncCompany extends Company implements FuncCompany {
     public String infoEmployee(Employee employee) {
         return employee.toString();
     }
-
-    public static void main(String[] args) {
-        DeeShevFuncCompany deeShev = new DeeShevFuncCompany("deeShev");
-        Manager intern = new Manager(new Person("denis", "shevelev", 24), true);
-        deeShev.addEmployee(intern, 4, true);
-        deeShev.addDirectReports(intern,new Manager(new Person("asd", "asd", 24), true));
-        deeShev.promotion(intern);
-        deeShev.increaseOfWages(intern, 5);
-        System.out.println(deeShev.infoEmployee(intern));
-    }
 }
